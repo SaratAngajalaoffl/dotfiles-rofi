@@ -8,17 +8,12 @@
 
 /*****----- Configuration -----*****/
 configuration {
-    modi:                       "combi,run";
+    modi:                       "combi";
+    combi-modi:                 "drun,emoji";
+    combi-hide-mode-prefix:     true;
     show-icons:                 true;
-    display-combi:              "󰍜";
     display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
-    display-rofi-power-menu:    "";
-    combi-modi:                 "drun,filebrowser";
     drun-display-format:        "{name}";
-    window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/
@@ -78,7 +73,7 @@ inputbar {
     background-image:            url("~/.cache/appearance/wallpaper.png", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
+    children:                    [ "textbox-prompt-colon", "entry", "dummy" ];
 }
 textbox-prompt-colon {
     enabled:                     true;
@@ -104,26 +99,6 @@ entry {
 dummy {
     expand:                      true;
     background-color:            transparent;
-}
-
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-button {
-    width:                       145px;
-    padding:                     12px;
-    border-radius:               100%;
-    background-color:            @background-alt;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            @selected;
-    text-color:                  @foreground;
 }
 
 /*****----- Listview -----*****/
